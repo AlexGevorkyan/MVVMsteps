@@ -12,7 +12,7 @@ namespace MVVMsteps.Model
 
         public override string ToString()
         {
-            return $"{FirstName[0]}. {LastName}: {PhoneNumber}";
+            return $"{FirstName} {LastName}: {PhoneNumber}";
 
         }
     }

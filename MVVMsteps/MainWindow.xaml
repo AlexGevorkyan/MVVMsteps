@@ -23,8 +23,14 @@
                 <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" />
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <Button x:Name="btnAddContact" Command="{Binding Path=ChangeNameCommand}" MaxWidth="100" HorizontalAlignment="Center" Content="Add Contact" />
+                <Button x:Name="btnAddContact" Command="{Binding Path=ChangeNameCommand}" 
+                        CommandParameter="{Binding ElementName=tbLastName, Path=Text}"
+                        MaxWidth="100" HorizontalAlignment="Center" Content="Add Contact" />
             </StackPanel>
+            
         </Grid>
+        <ListBox x:Name="lbContacts" ItemsSource="{Binding Contacts}"
+                 SelectedItem="{Binding SelectedContact}"   FontSize="24"
+                 Margin="10" Grid.Row="0" Grid.Column="1"></ListBox>
     </Grid>
 </Window>
