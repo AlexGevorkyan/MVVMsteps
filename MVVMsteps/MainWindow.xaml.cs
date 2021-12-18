@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMsteps.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,12 @@ namespace MVVMsteps
     {
         public MainWindow()
         {
+            
+            WindowViewModel viewModel = new WindowViewModel();
+            viewModel.LastName = "Beer";
+            DataContext = viewModel;
             InitializeComponent();
+            viewModel.LastName = "Armstrong";
         }
     }
 }
