@@ -1,8 +1,10 @@
-﻿using MVVMsteps.Model;
+﻿using MVVMsteps.Commands;
+using MVVMsteps.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 
 namespace MVVMsteps.ViewModel
 {
@@ -31,6 +33,19 @@ namespace MVVMsteps.ViewModel
 
         public void OnPropertyChanged(string propertyName) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private readonly DelegateCommand _changeNameCommand;
+        public ICommand ChangeNameCommand => _changeNameCommand;
+
+        public WindowViewModel()
+        {
+            _changeNameCommand = new DelegateCommand(OnChangeName);
+        }
+
+        private void OnChangeName(object commandParameter)
+        {
+            LastName = "Walter";
+        }
 
 
 

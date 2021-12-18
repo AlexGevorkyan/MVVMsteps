@@ -23,7 +23,7 @@
                 <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" />
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <Button x:Name="btnAddContact" MaxWidth="100" HorizontalAlignment="Center" Content="Add Contact" />
+                <Button x:Name="btnAddContact" Command="{Binding Path=ChangeNameCommand}" MaxWidth="100" HorizontalAlignment="Center" Content="Add Contact" />
             </StackPanel>
         </Grid>
     </Grid>
